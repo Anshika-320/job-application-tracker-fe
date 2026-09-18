@@ -245,7 +245,7 @@ export function Dashboard() {
           <section className={refreshing ? 'results is-refreshing' : 'results'}>
             {refreshing ? (
               <p className="results-status" role="status">
-                Updating results…
+                Updating results
               </p>
             ) : null}
             <ApplicationTable
@@ -280,7 +280,7 @@ export function Dashboard() {
       {deleteTarget ? (
         <ConfirmDialog
           title="Delete application"
-          description={`This permanently removes ${deleteTarget.companyName} — ${deleteTarget.role} and its notes.`}
+          description={`This deletes the ${deleteTarget.role} application at ${deleteTarget.companyName} and every note on it.`}
           confirmLabel="Delete application"
           onConfirm={handleDelete}
           onClose={() => setDeleteTarget(null)}

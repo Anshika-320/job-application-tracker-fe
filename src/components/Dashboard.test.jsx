@@ -156,7 +156,7 @@ describe('Dashboard', () => {
     await user.click(screen.getByRole('button', { name: /Delete Acme Corp/ }))
 
     const dialog = await screen.findByRole('dialog')
-    expect(within(dialog).getByText(/permanently removes Acme Corp/)).toBeInTheDocument()
+    expect(within(dialog).getByText(/deletes the Backend Engineer application at Acme Corp/)).toBeInTheDocument()
     expect(api.deleteApplication).not.toHaveBeenCalled()
 
     await user.click(within(dialog).getByRole('button', { name: 'Delete application' }))

@@ -100,7 +100,7 @@ export function NotesDialog({ application, onClose, onNotesChanged }) {
 
   return (
     <Modal
-      title={`Notes — ${application.companyName}`}
+      title={`Notes for ${application.companyName}`}
       description={`${application.role}${application.location ? ` · ${application.location}` : ''}`}
       onClose={onClose}
     >
