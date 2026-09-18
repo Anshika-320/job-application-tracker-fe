@@ -26,6 +26,8 @@ rows at a time.
 
 Each row opens a panel where you can read, add and delete notes for that application.
 
+![Notes](https://raw.githubusercontent.com/Anshika-320/job-application-tracker-fe/main/docs/screenshots/notes.png)
+
 The layout holds down to 390px wide, where the table turns into stacked cards.
 
 ![Sign in](https://raw.githubusercontent.com/Anshika-320/job-application-tracker-fe/main/docs/screenshots/login.png)
