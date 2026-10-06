@@ -1,4 +1,6 @@
-export const API_BASE_URL = '/api'
+const API_ORIGIN = (import.meta.env.VITE_API_URL ?? '').trim().replace(/\/+$/, '')
+
+export const API_BASE_URL = `${API_ORIGIN}/api`
 
 const MESSAGE_KEYS = ['message', 'detail']
 const PROBLEM_METADATA_KEYS = [

@@ -84,9 +84,19 @@ target when the API runs elsewhere:
 VITE_API_PROXY_TARGET=http://localhost:9090 npm run dev
 ```
 
-A built bundle has no proxy. The browser calls the API directly and the API decides
-whether to allow it, so add this client's origin to the API's `FRONTEND_ORIGIN`
-setting before deploying:
+A built bundle has no proxy. Set `VITE_API_URL` to the API's origin when building, for
+example in the Vercel project's environment variables:
+
+```bash
+VITE_API_URL=https://your-api.onrender.com
+```
+
+Use the origin only, without a trailing slash or `/api`. Vite reads it at build time,
+so redeploy after changing it. When it is unset the client calls `/api` on its own
+origin, which is what the development proxy expects.
+
+The browser then calls the API directly and the API decides whether to allow it, so
+add this client's origin to the API's `FRONTEND_ORIGIN` setting before deploying:
 
 ```bash
 FRONTEND_ORIGIN=https://your-client-host
